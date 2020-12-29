@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <!--Base-->
+    <template id="theme_twenty_layout" name="Theme twenty layout" inherit_id="web.frontend_layout">
+        <xpath expr="//main/t[@t-raw='0']" position="replace">
+            <div class="team-twenty">
+                <div><p><t t-value="var"/></p></div>
+                <t t-raw="0"/>
+            </div>
+        </xpath>
+    </template>
+
+
+<!--    === Home Page ===-->
+    <record id="homepage" model="website.page">
+        <field name="name">Homepage</field>
+        <field name="website_published">True</field>
+        <field name="url">/</field>
+        <field name="type">qweb</field>
+        <field name="key">theme_twenty.homepage</field>
+        <field name="arch" type="xml">
+            <t t-name="theme_twenty.homepage_template">
+                <t t-call="theme_twenty.theme_twenty_layout">
+                    <t t-set="pageName" t-value="'homepage'"/>
+                    <t t-set="var" t-value="1"/>
+                    <div id="wrap">
+<!--                        <ul class="services">-->
+<!--                            <li>Cloud Hosting</li>-->
+<!--                            <li>Support</li>-->
+<!--                            <li>Unlimited space</li>-->
+<!--                        </ul>-->
+
+                        <!-- === Snippets' area === -->
+                        <div class="oe_structure"/>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+
+
+
+
+    <record id="main" model="website.menu">
+        <field name="name">Main</field>
+        <field name="sequence" type="int">1</field>
+    </record>
+
+    <record id="parent_one" model="website.menu">
+        <field name="name">Parent One</field>
+        <field name="parent_id" ref="theme_twenty.main"/>
+        <field name="sequence" type="int">25</field>
+    </record>
+
+    <record id="parent_two" model="website.menu">
+        <field name="name">Parent Two</field>
+        <field name="parent_id" ref="theme_twenty.main"/>
+        <field name="sequence" type="int">26</field>
+    </record>
+
+    <record id="page_1_link" model="website.menu">
+        <field name="name">Page 1</field>
+        <field name="url">/i2/page_1</field>
+        <field name="parent_id" ref="theme_twenty.parent_one"/>
+        <field name="sequence" type="int">30</field>
+    </record>
+
+    <record id="page_2_link" model="website.menu">
+        <field name="name">Page 2</field>
+        <field name="url">/i2/page_2</field>
+        <field name="parent_id" ref="theme_twenty.parent_one"/>
+        <field name="sequence" type="int">31</field>
+    </record>
+
+    <record id="page_3_link" model="website.menu">
+        <field name="name">Page 2</field>
+        <field name="url">/i2/page_3</field>
+        <field name="parent_id" ref="theme_twenty.parent_two"/>
+        <field name="sequence" type="int">32</field>
+    </record>
+
+    <!--    <record id="services_page_link" model="website.menu">-->
+    <!--        <field name="url">/i2/services</field>-->
+    <!--        <field name="name">Services</field>-->
+    <!--        <field name="parent_id" ref="website.main_menu"/>-->
+    <!--        <field name="sequence" type="int">40</field>-->
+    <!--    </record>-->
+
+</odoo>

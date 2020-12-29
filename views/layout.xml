@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- Customize header  -->
+
+
+    <!-- Customize body  -->
+    <template id="custom_body" inherit_id="website.layout" name="Custom Main">
+        <xpath expr="//div[@id='wrapwrap']/main" position="attributes">
+            <attribute name="id">custom_main</attribute>
+            <attribute name="class">container</attribute>
+        </xpath>
+    </template>
+
+    <!-- Customize footer  -->
+    <template id="custom_footer" inherit_id="web.frontend_layout" name="Custom Footer">
+        <xpath expr="//footer[@id='bottom']" position="replace">
+            <footer t-if="not no_footer" id="bottom" data-anchor="true" >
+                    <div class="container" id="footer-text">Biovum GmbH Gewerbepark 11 87775 Salgen - Tel +49 (0) 82 65/22   60 00 -   Email</div>
+                </footer>
+        </xpath>
+    </template>
+
+</odoo>
