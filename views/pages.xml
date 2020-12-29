@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
-    <!--Base-->
+    <!--Wrapper for side menu-->
     <template id="theme_twenty_layout" name="Theme twenty layout" inherit_id="web.frontend_layout">
         <xpath expr="//main/t[@t-raw='0']" position="replace">
             <div class="team-twenty">
-                <div><p><t t-value="var"/></p></div>
+                <div><p><t t-esc="var"/></p></div>
+                <ul>
+                    <li>Link 1</li>
+                    <li>Link 2</li>
+                    <li>Link 3</li>
+                </ul>
                 <t t-raw="0"/>
             </div>
         </xpath>
@@ -23,7 +28,7 @@
             <t t-name="theme_twenty.homepage_template">
                 <t t-call="theme_twenty.theme_twenty_layout">
                     <t t-set="pageName" t-value="'homepage'"/>
-                    <t t-set="var" t-value="1"/>
+                    <t t-set="var" t-value="'Some menu'"/>
                     <div id="wrap">
 <!--                        <ul class="services">-->
 <!--                            <li>Cloud Hosting</li>-->
