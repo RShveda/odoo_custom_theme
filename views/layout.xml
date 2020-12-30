@@ -1,9 +1,26 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-    <!-- Customize header  -->
+    <!--==Customize header==-->
 
 
-    <!-- Customize body  -->
+    <!--==Customize body==-->
+
+    <!--Wrapper for side menu-->
+    <template id="theme_biovum_layout" name="Theme twenty layout" inherit_id="web.frontend_layout">
+        <xpath expr="//main/t[@t-raw='0']" position="replace">
+            <div class="team-twenty">
+                <div><p><t t-esc="var"/></p></div>
+                <ul>
+                    <li>Link 1</li>
+                    <li>Link 2</li>
+                    <li>Link 3</li>
+                </ul>
+                <t t-raw="0"/>
+            </div>
+        </xpath>
+    </template>
+
+    <!--Added class and id-->
     <template id="custom_body" inherit_id="website.layout" name="Custom Main">
         <xpath expr="//div[@id='wrapwrap']/main" position="attributes">
             <attribute name="id">custom_main</attribute>
@@ -11,7 +28,7 @@
         </xpath>
     </template>
 
-    <!-- Customize footer  -->
+    <!--==Customize footer==-->
     <template id="custom_footer" inherit_id="web.frontend_layout" name="Custom Footer">
         <xpath expr="//footer[@id='bottom']" position="replace">
             <footer t-if="not no_footer" id="bottom" data-anchor="true" >

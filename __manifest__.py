@@ -1,8 +1,8 @@
 {
-    'name': 'Twenty theme',
-    'description': 'Theme to practice web design.',
+    'name': 'Biovum theme',
+    'description': 'Theme for biovum website.',
     'version': '1.0',
-    'author': 'Roman Shveda',
+    'author': 'Bytebrand team',
 
     'data': [
         'views/assets.xml',
