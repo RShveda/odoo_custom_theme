@@ -5,16 +5,10 @@
 
     <!--==Customize body==-->
 
-    <!--Wrapper for side menu-->
+    <!--Wrapper for left-side menu-->
     <template id="theme_biovum_layout" name="Theme twenty layout" inherit_id="web.frontend_layout">
         <xpath expr="//main/t[@t-raw='0']" position="replace">
             <div class="team-twenty">
-                <div><p><t t-esc="var"/></p></div>
-                <ul>
-                    <li>Link 1</li>
-                    <li>Link 2</li>
-                    <li>Link 3</li>
-                </ul>
                 <t t-raw="0"/>
             </div>
         </xpath>
@@ -31,9 +25,10 @@
     <!--==Customize footer==-->
     <template id="custom_footer" inherit_id="web.frontend_layout" name="Custom Footer">
         <xpath expr="//footer[@id='bottom']" position="replace">
-            <footer t-if="not no_footer" id="bottom" data-anchor="true" >
-                    <div class="container" id="footer-text">Biovum GmbH Gewerbepark 11 87775 Salgen - Tel +49 (0) 82 65/22   60 00 -   Email</div>
-                </footer>
+            <footer t-if="not no_footer" id="bottom" data-anchor="true">
+                <div class="container" id="footer-text">Biovum GmbH Gewerbepark 11 87775 Salgen - Tel +49 (0) 82 65/22
+                    60 00 - Email</div>
+            </footer>
         </xpath>
     </template>
 

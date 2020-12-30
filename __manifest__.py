@@ -9,6 +9,7 @@
         'views/layout.xml',
         'views/pages.xml',
         'views/produkte_pages.xml',
+        'views/uber_uns_pages.xml',
     ],
     'category': 'Theme/Creative',
     'depends': ['website', 'website_theme_install'],
